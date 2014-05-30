@@ -1,20 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{890205B2-586F-4C05-AEAE-42C76F04A403}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{B8A561FA-61D1-4CCD-AB7B-D77E39B4858C}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Bible</RootNamespace>
-    <AssemblyName>Bible</AssemblyName>
+    <RootNamespace>Bible1</RootNamespace>
+    <AssemblyName>Bible1</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,22 +20,20 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="nunit.framework">
-      <HintPath>packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -49,38 +45,38 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EqualsDir\Class1.cs" />
+    <Compile Include="EqualsDir\DictionaryItemHashcode.cs" />
     <Compile Include="EqualsDir\EquatableGuy.cs" />
+    <Compile Include="EqualsDir\Guy.cs" />
     <Compile Include="EqualsDir\GuyCompare.cs" />
+    <Compile Include="EqualsDir\IEquatableAndIEqualityComparer.cs" />
     <Compile Include="Equals\ComplexNumber.cs" />
     <Compile Include="Equals\EqualsIssue.cs" />
     <Compile Include="Equals\EqualsIssue2.cs" />
-    <Compile Include="EqualsDir\DictionaryItemHashcode.cs" />
-    <Compile Include="EqualsDir\Guy.cs" />
-    <Compile Include="EqualsDir\IEquatableAndIEqualityComparer.cs" />
     <Compile Include="Printer.cs" />
-    <Compile Include="内存管理\StackUtil.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="克隆\CloneIssue.cs" />
+    <Compile Include="内存管理\DisposableIssue.cs" />
     <Compile Include="内存管理\ParameterIssue1.cs" />
+    <Compile Include="内存管理\ParameterIssue2.cs" />
     <Compile Include="内存管理\ParameterIssueSize.cs" />
+    <Compile Include="内存管理\StackHeap.cs" />
+    <Compile Include="内存管理\StackHeap2.cs" />
+    <Compile Include="内存管理\StackUtil.cs" />
     <Compile Include="列表类\ListIssue.cs" />
     <Compile Include="列表类\OrderIssue.cs" />
     <Compile Include="多态\Polymorphism.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="内存管理\DisposableIssue.cs" />
-    <Compile Include="内存管理\StackHeap.cs" />
-    <Compile Include="内存管理\StackHeap2.cs" />
     <Compile Include="多态\Polymorphism2.cs" />
     <Compile Include="多态\SealedIssue.cs" />
     <Compile Include="字符串\StringCompare.cs" />
-    <Compile Include="内存管理\ParameterIssue2.cs" />
-    <Compile Include="克隆\CloneIssue.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="内存管理\readme.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="内存管理\readme.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="NumberPrecise\" />
