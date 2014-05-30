@@ -18,7 +18,7 @@ namespace Bible1.Tests
         [Test]
         public void should_failed()
         {
-            Assert.AreEqual(1, 1);
+            Assert.AreEqual(1, 21);
         }
     }
 }
