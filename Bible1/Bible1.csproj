@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{B8A561FA-61D1-4CCD-AB7B-D77E39B4858C}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Bible1</RootNamespace>
     <AssemblyName>Bible1</AssemblyName>
@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
@@ -45,15 +48,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EqualsDir\Class1.cs" />
     <Compile Include="EqualsDir\DictionaryItemHashcode.cs" />
     <Compile Include="EqualsDir\EquatableGuy.cs" />
     <Compile Include="EqualsDir\Guy.cs" />
     <Compile Include="EqualsDir\GuyCompare.cs" />
     <Compile Include="EqualsDir\IEquatableAndIEqualityComparer.cs" />
+    <Compile Include="Equals\EqualityMembers.cs" />
     <Compile Include="Equals\ComplexNumber.cs" />
     <Compile Include="Equals\EqualsIssue.cs" />
     <Compile Include="Equals\EqualsIssue2.cs" />
+    <Compile Include="Ev\Delegate4.cs" />
+    <Compile Include="Ev\Delegate3.cs" />
+    <Compile Include="Ev\Delegate2.cs" />
+    <Compile Include="Ev\Delegate1.cs" />
+    <Compile Include="Ev\Ev2.cs" />
+    <Compile Include="Ev\Ev1.cs" />
+    <Compile Include="Ev\Ev3.cs" />
+    <Compile Include="Ev\EvSample1.cs" />
+    <Compile Include="InterfaceHierarchy\InterfaceHier.cs" />
     <Compile Include="Printer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,6 +83,7 @@
     <Compile Include="多态\Polymorphism2.cs" />
     <Compile Include="多态\SealedIssue.cs" />
     <Compile Include="字符串\StringCompare.cs" />
+    <Compile Include="线程\MonitorThreadTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="内存管理\readme.txt" />
@@ -81,6 +94,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="NumberPrecise\" />
+    <Folder Include="ReflectCase\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bible1Lib\Bible1Lib.csproj">
+      <Project>{dddb56e6-b087-4f9e-9466-845eedaf0ab8}</Project>
+      <Name>Bible1Lib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
