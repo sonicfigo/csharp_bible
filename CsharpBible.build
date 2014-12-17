@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="csharpbible" default="csharpbible-develop" basedir="." xmlns="http://nant.sf.net/schemas/nant.xsd">
+    <property name="PROJECT_NAME" value="csharpbible" />
+    <property name="PROJECT_VER" value="204.001.001" />
+    <property name="Now" value="${datetime::now()}" />
+
+    <target name="csharpbible-develop" description="for test using">
+        <echo message="the current project name is ${PROJECT_NAME}"/>
+        <echo message="the current project version is ${PROJECT_VER}"/>
+        <echo message="the current date is ${Now}"/>
+
+        <delete>
+            <fileset>
+                <include name="./out/Artifacts/*.zip" />
+            </fileset>
+        </delete>
+        
+        <zip zipfile="./out/Artifacts/csharpbible-${datetime::format-to-string(Now, 'yyyy-MM-dd')}.zip">
+            <!--<fileset basedir="./out/App/Debug/infras" prefix="infras">
+                <include name="**/*" />
+            </fileset>-->
+            <fileset basedir="./out/App/Debug/" prefix="">
+                <include name="FluentNHibernate.dll" />
+            </fileset>
+        </zip>
+    </target>
+
+
+</project>
